@@ -1,0 +1,20 @@
+.search {
+  position: relative;
+  padding-top: 41px;
+  margin-bottom: 0;
+}
+.search input {
+  padding-left: 50px;
+}
+.search i {
+  position: absolute;
+  margin-left: 20px;
+  font-size: 30px;
+  line-height: 50px;
+  color: #ccc;
+}
+.search .search-field {
+  height: 50px;
+}
+
+
