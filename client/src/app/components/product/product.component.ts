@@ -10,18 +10,18 @@ import { Product } from './../../model/product'
 })
 export class ProductComponent implements OnInit {
   private subscription : Subscription;
-  private products : Product[] = [];
+  private products;
   private isLoading : boolean = true;
   constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-    /*this.subscription = this._productService
+    this.subscription = this._productService
                             .getAllProducts()
                             .subscribe(
-                               products => this.products = products,
+                               products => this.products = products ,
                                error => console.log(error),
-                               () => this.isLoading = false
-                            );*/
+                               () => {this.isLoading = false;console.log(this.products)}
+                            );
   }
 
 }

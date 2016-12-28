@@ -3,72 +3,16 @@
     <div class="row collapse">
       <div class="small-12 large-12  columns ">
         <i class="fi-magnifying-glass"></i>
-        <input type="text" class="search-field" placeholder="your search ">
+        <input type="text" class="search-field" placeholder="your search">
       </div>
     </div>
 </div>
-  <div class="row">
-    <div class="large-4 columns">
-      <img src="http://placehold.it/1000x1000&text=Thumbnail">
+  <div class="row" >
+    <div class="columns product" *ngFor="let p of products">
+      <img [src]="'assets/images/'+p.image" >
       <div class="panel">
-        <h5>Item Name</h5>
-        <h6 class="subheader">$000.00</h6>
+        <h5>{{p.name}}</h5>
+        <h6 class="subheader">Price:{{p.price}}$   <button class="button tiny"><i class="fi-shopping-cart"></i></button> <button class="button tiny">Detail</button></h6>
       </div>
     </div>
-    <div class="large-4 columns">
-      <img src="http://placehold.it/500x500&text=Thumbnail">
-      <div class="panel">
-        <h5>Item Name</h5>
-        <h6 class="subheader">$000.00</h6>
-      </div>
-    </div>
-    <div class="large-4 columns">
-      <img src="http://placehold.it/500x500&text=Thumbnail">
-      <div class="panel">
-        <h5>Item Name</h5>
-        <h6 class="subheader">$000.00</h6>
-      </div>
-    </div>
-    <div class="large-4 columns">
-      <img src="http://placehold.it/500x500&text=Thumbnail">
-      <div class="panel">
-        <h5>Item Name</h5>
-        <h6 class="subheader">$000.00</h6>
-      </div>
-    </div>
-    <div class="large-4 columns">
-      <img src="http://placehold.it/500x500&text=Thumbnail">
-      <div class="panel">
-        <h5>Item Name</h5>
-        <h6 class="subheader">$000.00</h6>
-      </div>
-    </div>
-    <div class="large-4  columns">
-      <img src="http://placehold.it/500x500&text=Thumbnail">
-      <div class="panel">
-       <h5>Item Name</h5>
-       <h6 class="subheader">$000.00</h6>
-     </div>
-   </div>
-    <div class="large-4 columns">
-      <img src="http://placehold.it/500x500&text=Thumbnail">
-      <div class="panel">
-        <h5>Item Name</h5>
-        <h6 class="subheader">$000.00</h6>
-      </div>
-    </div>
-    <div class="large-4 columns">
-      <img src="http://placehold.it/500x500&text=Thumbnail">
-      <div class="panel">
-        <h5>Item Name</h5>
-        <h6 class="subheader">$000.00</h6>
-      </div>
-    </div>
-    <div class="large-4  columns">
-      <img src="http://placehold.it/500x500&text=Thumbnail">
-      <div class="panel">
-       <h5>Item Name</h5>
-       <h6 class="subheader">$000.00</h6>
-     </div>
-   </div>
  </div>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes  } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component'
@@ -10,6 +11,11 @@ import { ProductComponent } from './components/product/product.component'
 import { AsideComponent } from './components/aside/aside.component'
 
 import { ProductService } from './services/product.service';
+import { LoginComponent } from './components/login/login.component';
+
+const routes : Routes = [
+  {path:'', component : ProductComponent}
+];
 
 @NgModule({
   declarations: [
@@ -17,13 +23,15 @@ import { ProductService } from './services/product.service';
     HeaderComponent,
     FooterComponent,
     ProductComponent,
-		AsideComponent
+		AsideComponent,
+		LoginComponent
   ],
 
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
 
   providers: [ProductService],
