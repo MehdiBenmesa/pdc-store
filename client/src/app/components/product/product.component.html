@@ -1,4 +1,4 @@
-<div class="large-8 columns">
+<div class="large-9 columns">
   <div class="row search">
     <div class="row collapse">
       <div class="small-12 large-12  columns ">
@@ -8,11 +8,12 @@
     </div>
 </div>
   <div class="row" >
-    <div class="columns product" *ngFor="let p of products">
+    <div class="columns large-3 product" *ngFor="let p of products">
       <img [src]="'assets/images/'+p.image" >
       <div class="panel">
         <h5>{{p.name}}</h5>
         <h6 class="subheader">Price:{{p.price}}$   <button class="button tiny"><i class="fi-shopping-cart"></i></button> <button class="button tiny">Detail</button></h6>
       </div>
     </div>
+ </div>
  </div>

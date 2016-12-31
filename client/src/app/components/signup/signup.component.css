@@ -25,9 +25,8 @@
 .signup-panel .button {
   margin-left: 35%;
 }
-
-.log-in{
-  position: fixed;
-  top : 100px;
+.sign-up{
+  position : fixed;
+  top : 0px;
   left : 400px;
 }

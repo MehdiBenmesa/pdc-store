@@ -1,4 +1,3 @@
-import { Response } from '@angular/http';
 import { Product } from './../model/product';
 import { VideoProduct } from './../model/video-product';
 import { AudioProduct } from './../model/audio-product';

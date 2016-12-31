@@ -12,15 +12,15 @@ export class ProductComponent implements OnInit {
   private subscription : Subscription;
   private products;
   private isLoading : boolean = true;
-  constructor(private _productService: ProductService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.subscription = this._productService
+    this.subscription = this.productService
                             .getAllProducts()
                             .subscribe(
                                products => this.products = products ,
                                error => console.log(error),
-                               () => {this.isLoading = false;console.log(this.products)}
+                               () => this.isLoading = false
                             );
   }
 

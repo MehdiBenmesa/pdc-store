@@ -8,9 +8,12 @@
 			<li><a href="#">Blog</a></li>
 			<li><a href="#">Pricing</a></li>
 		</ul>
-		<ul class="inline-list account-action">
-			<li><a href="#" >Login</a></li>
-			<li class=""><a class="signup" href="#">Signup</a></li>
+		<ul *ngIf="!loginStatus"class="inline-list account-action">
+			<li><a href="#" (click) = "onLoginClicked()" >Login</a></li>
+			<li class=""><a class="signup" href="#" (click) = "onSignupClicked()">Signup</a></li>
+		</ul>
+		<ul *ngIf="loginStatus"class="inline-list account-action">
+			<li><a href="#" class="signup" (click) = "onDisconnect()" >Disconnect</a></li>
 		</ul>
 		<a class="account" href="#"><i class="fi-unlock"></i></a>
 	</nav>
