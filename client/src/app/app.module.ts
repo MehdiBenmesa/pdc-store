@@ -13,9 +13,22 @@ import { ProductService } from './services/product.service';
 import { UserService } from './services/user.service';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { RechargeComponent } from './components/recharge/recharge.component';
+import { UserProductsComponent} from './components/user-products/user-products.component';
+import { ProductDetailComponent} from './components/product-detail/product-detail.component';
+import { ProductDetailFreeComponent } from './components/product-detail-free/product-detail-free.component';
+
+import { PdfViewerComponent  } from 'ng2-pdf-viewer';
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
 
 const routes : Routes = [
-  {path:'', component : ProductComponent}
+  {path:'', component : ProductComponent},
+  {path:'user-products', component: UserProductsComponent},
+  {path:'product-detail', component: ProductDetailComponent},
+  {path:'product-detail-free', component: ProductDetailFreeComponent}
 ];
 
 @NgModule({
@@ -26,13 +39,22 @@ const routes : Routes = [
     ProductComponent,
 		AsideComponent,
 		LoginComponent,
-    SignupComponent
+    SignupComponent,
+    RechargeComponent,
+    UserProductsComponent,
+    ProductDetailComponent,
+    ProductDetailFreeComponent,
+    PdfViewerComponent
   ],
 
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+ 		VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
     RouterModule.forRoot(routes)
   ],
 

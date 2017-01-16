@@ -1,0 +1,84 @@
+  <div class="row" >
+    <article class="columns large-3 product" >
+      <img [src]="'assets/images/'+activeProduct.image" >
+      <div class="panel">
+        <h5>{{activeProduct.name}}</h5>
+        <h6 class="subheader"><button (click)="downloadFile()"class="button tiny"> Download </button></h6>
+      </div>
+   </article>
+   <div class ="description columns large-4 ">
+     {{activeProduct.description}}
+
+   </div>
+ <div class="columns large-12 pdf">
+   <pdf-viewer *ngIf="activeProduct.constructor.name=='DocumentProdcut'" [src]="'assets/documents/'+activeProduct.file"
+     [original-size]="true"
+     [show-all]="true"
+     [zoom]="2"
+     [render-text]="true"
+     > </pdf-viewer>
+<vg-player *ngIf="activeProduct.constructor.name =='AudioProduct'" >
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering></vg-buffering>
+
+    <vg-scrub-bar>
+        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+    </vg-scrub-bar>
+
+    <vg-controls>
+        <vg-play-pause></vg-play-pause>
+        <vg-playback-button></vg-playback-button>
+
+        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+        <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+        <vg-track-selector></vg-track-selector>
+        <vg-mute></vg-mute>
+        <vg-volume></vg-volume>
+
+        <vg-fullscreen></vg-fullscreen>
+    </vg-controls>
+
+    <video vgMedia #media id="singleVideo" preload="auto" crossorigin>
+        <source  [src]="'assets/audios/'+activeProduct.file" [type]="'audio/mpeg'" >
+    </video>
+</vg-player>
+<vg-player *ngIf="activeProduct.constructor.name =='VideoProduct'" >
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering></vg-buffering>
+
+    <vg-scrub-bar>
+        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+    </vg-scrub-bar>
+
+    <vg-controls>
+        <vg-play-pause></vg-play-pause>
+        <vg-playback-button></vg-playback-button>
+
+        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+        <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+        <vg-track-selector></vg-track-selector>
+        <vg-mute></vg-mute>
+        <vg-volume></vg-volume>
+
+        <vg-fullscreen></vg-fullscreen>
+    </vg-controls>
+
+    <video vgMedia #media id="singleVideo" preload="auto" crossorigin>
+        <source  [src]="'assets/videos/'+activeProduct.file" [type]="'video/mp4'" >
+    </video>
+</vg-player>
+
+</div>
+</div>

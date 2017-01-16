@@ -1,0 +1,12 @@
+  <div class="row" >
+    <article class="columns large-3 product" >
+      <img [src]="'assets/images/'+activeProduct.image" >
+      <div class="panel">
+        <h5>{{activeProduct.name}}</h5>
+        <h6 class="subheader">Price:{{activeProduct.price}}$   <button *ngIf="loginStatus" class="button tiny" (click)="addProductToCart(activeProduct)" ><i class="fi-shopping-cart" ></i></button><button class="button tiny" (click)="setActiveProduct(activeProduct)" routerLink="/product-detail-free">Detail</button></h6>
+      </div>
+   </article>
+   <div class ="description columns large-4 ">
+     {{activeProduct.description}}
+   </div>
+  </div>

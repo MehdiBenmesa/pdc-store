@@ -1,4 +1,5 @@
 module.exports = function(Product){
+
   function getProduct(_id, callback){
     Product.findOne({_id : _id}, (error, product) => {
        callback(error, product);
@@ -29,6 +30,7 @@ module.exports = function(Product){
       callback(error);
     });
   }
+
   return {
     getProduct,
     getProducts,

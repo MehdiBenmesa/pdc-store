@@ -12,9 +12,9 @@ module.exports = function(User, jwt){
 
 function authenticate(obj, callback){
   User.findOne({username: obj.username, password:obj.password}, (error, user) => {
+    console.log(user);
       callback(error, user);
   });
-
 }
   function getUser(id, callback){
     User.findOne({_id:id}, (err, user) => {
@@ -22,11 +22,32 @@ function authenticate(obj, callback){
     });
   }
 
+  function chargeWallet(id, amount, callback){
+    User.findOneAndUpdate({_id: id}, {$inc: {credit:amount}},{new : true}, (err, res)=>{
+      callback(err, res);
+    });
+  }
+
+  function checkOut(id, amount, products, callback){
+    User.findOneAndUpdate({_id:id}, {$inc:{credit:-amount}, $push:{products:{$each:products}}},{new : true},(err, res) => {
+      callback(err, res);
+    });
+  }
+
+  function getUserProducts(id, callback){
+    User.findOne({_id:id}).populate('products').exec((err, res) => {
+      callback(err, res.products);
+    });
+  }
+
   return{
     addProduct,
     addUser,
     getUser,
-    authenticate
+    authenticate,
+    chargeWallet,
+    checkOut,
+    getUserProducts
   }
 
 }

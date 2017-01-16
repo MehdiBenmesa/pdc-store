@@ -5,7 +5,7 @@ module.exports = function(mongoose){
     email : String,
     password : String,
     type : String,
-    credit : Number,
+    credit : {type:Number, default:0},
     products :[{type:mongoose.Schema.Types.ObjectId, ref:'Product'}]
   });
   return mongoose.model('User', productSchema);

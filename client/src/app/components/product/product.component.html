@@ -8,12 +8,12 @@
     </div>
 </div>
   <div class="row" >
-    <div class="columns large-3 product" *ngFor="let p of products">
+    <article *ngFor="let p of products"class="columns large-3 product" >
       <img [src]="'assets/images/'+p.image" >
       <div class="panel">
         <h5>{{p.name}}</h5>
-        <h6 class="subheader">Price:{{p.price}}$   <button class="button tiny"><i class="fi-shopping-cart"></i></button> <button class="button tiny">Detail</button></h6>
+        <h6 class="subheader">Price:{{p.price}}$   <button *ngIf="loginStatus" class="button tiny" (click)="addProductToCart(p)" ><i class="fi-shopping-cart" ></i></button><button class="button tiny" (click)="setActiveProduct(p)" routerLink="/product-detail-free">Detail</button></h6>
       </div>
-    </div>
- </div>
+   </article>
+  </div>
  </div>

@@ -39,5 +39,12 @@ module.exports = function(express, productCtrl ){
       });
     });
   });
+
+  router.post('/user-products',(req, res) => {
+    productCtrl.getUserProducts(req.body,(err, res) => {
+      if(err) throw err;
+      res.json(res);
+    });
+  })
   return router;
 }

@@ -22,7 +22,7 @@ export class AppComponent {
                                   userService.setUser(this.user);
                                   userService.setLoginStatus(true);
 
-                          })
+                          });
     }
   }
 }

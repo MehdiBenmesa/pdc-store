@@ -27,6 +27,7 @@ export class SignupComponent implements OnInit {
             this.userService.setLoginStatus(true);
             localStorage.setItem('login', JSON.stringify(true));
             localStorage.setItem('userId', JSON.stringify(this.user.id));
+            location.reload();
         }
       );
     }

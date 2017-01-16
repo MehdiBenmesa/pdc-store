@@ -1,0 +1,15 @@
+
+.product{
+  box-shadow : 0px 15px 10px rgb(20,20 ,20);
+  background-color : rgb(89, 14, 0) ;
+  margin : 4.167%;
+}
+
+.product img{
+  padding-top:10px;
+}
+
+.description{
+  padding: 20px;
+  margin : 3%;
+}

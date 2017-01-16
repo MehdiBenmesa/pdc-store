@@ -1,0 +1,15 @@
+ <div class="row log-in">
+    <div class="large-12 columns">
+      <div class="signup-panel">
+        <p class="welcome"> Rechargement de credit</p>
+        <a class="button" (click) = "onTicketClicked()">Ticket </a>
+        <a class="button" (click) = "onBankClicked()">Banque </a>
+        <div *ngIf="choice == 1">
+          <h2>Numero de ticket</h2>
+          <input #number type = "text"/>
+          <a class="button" (click)="rechargeTicket(number)">Valider</a>
+        </div>
+        <div *ngIf="choice == 2"> Bank </div>
+      </div>
+    </div>
+ </div>

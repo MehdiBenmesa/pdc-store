@@ -7,4 +7,5 @@
 </div>
 <app-login *ngIf="header.isLoginClicked()&& ! header.getLoginStatus()" ></app-login>
 <app-signup *ngIf="header.isSignupClicked()&& ! header.getLoginStatus()"></app-signup>
+<app-recharge *ngIf="header.isRechargeClicked()"></app-recharge>
 <app-footer> </app-footer>

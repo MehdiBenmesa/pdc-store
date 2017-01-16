@@ -1,27 +1,19 @@
 <div class="large-3 columns">
-  <div class="row file-list">
-    <div class=" columns">
-      <ul>
-        <li><i class="fi-torso"></i>&nbsp;&nbsp;Multimedia</li>
-          <ul>
-            <li>
-              <ul>
-                <li><i class="fi-dollar"></i>&nbsp;&nbsp;Music</li>
-                <li><i class="fi-euro"></i>&nbsp;&nbsp;Video</li>
-              </ul>
-            </li>
-          </ul>
-        <hr class="folder">
-        <li><i class="fi-torsos"></i>&nbsp;&nbsp;Couple</li>
-          <ul>
-            <li>
-              <ul>
-                <li><i class="fi-social-apple"></i>&nbsp;&nbsp;Docs</li>
-                <li><i class="fi-social-apple"></i>&nbsp;&nbsp;Books</li>
-              </ul>
-            </li>
-         </ul>
-       </ul>
-    </div>
+  <div id="place-holder" *ngIf="!loginStatus">
+    <h2>PDC e-store</h2>
   </div>
+	<div id="cd-cart" *ngIf="loginStatus">
+		<h2>Cart</h2>
+		<ul class="cd-cart-items">
+		 	<li *ngFor="let p of cart.getProducts()">
+        <span class="cd-qty"> {{p.name}}</span>
+        <div class="cd-price">Price : {{p.price}}$</div>
+				<a  class="cd-item-remove cd-img-replace" (click)="removeProduct(p)">Remove</a>
+			</li>
+		</ul> <!-- cd-cart-items -->
+		<div class="cd-cart-total">
+      <p>Total: <span>${{cart.calculateSome() }}$</span></p>
+		</div> <!-- cd-cart-total -->
+		<a  class="checkout-btn" (click)="checkOut()">Checkout</a>
+	</div>
 </div>
